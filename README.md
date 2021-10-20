@@ -101,7 +101,7 @@ _InternApp is a web application designed to centralize the application process f
 
 ## Running the application on your local machine
 
-1. **[Install Node.js (either version is fine)](https://nodejs.org/en/)**
+1. **[Install Node.js (Has to be version 10.15.1)](https://community.chocolatey.org/packages/nodejs.install/10.15.1)**
    <br>
    &nbsp;&nbsp;&nbsp;&nbsp;a. To ensure you have Node.js installed, run 'node --version' within your terminal/command line<br/>
 2. **[Clone this github repository to your local machine](https://github.com/soft-eng-practicum/internapp)**
