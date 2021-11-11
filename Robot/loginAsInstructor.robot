@@ -5,9 +5,8 @@ Documentation   Bzzt ~ Boop Test that is verifying the opening of Google.com Che
 Library    SeleniumLibrary
 
 *** Variables ***
-${adminUsername}    test@test.com
-${adminPassword}    123456
-
+${instructorUsername}    test4@ggc.edu
+${instructorPassword}    123456
 
 *** Keyword ***
 #This is the automated function for making the robot click at a location
@@ -33,10 +32,10 @@ Move to Login Page
 
 Attempt to Login With Credentials
 #passes the password variables into the xpath locations for username box and password box respectively. Then it clicks the login
-    Sleep    2s
 
-    Input Text    //*[@id="emailTxt"]    ${adminUsername}
-    Input Text    //*[@id="passwordTxt"]    ${adminPassword}
+    Sleep    2s
+    Input Text    //*[@id="emailTxt"]    ${instructorUsername}
+    Input Text    //*[@id="passwordTxt"]    ${instructorPassword}
 
     Mouse Down    //*[@id="loginBtn"]
-    Mouse Up    //*[@id="loginBtn"]
+    Mouse Up      //*[@id="loginBtn"]

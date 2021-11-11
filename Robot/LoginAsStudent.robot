@@ -1,15 +1,12 @@
 *** Settings ***
-<<<<<<< HEAD:Robot/LoginStudent.robot
-Documentation    Test that is verifying the opening of Google.com Checks if the installation is correct.
-=======
 Documentation   Bzzt ~ Boop Test that is verifying the opening of Google.com Checks if the installation is correct.
->>>>>>> origin/JordansBranch:Robot/internAppLogin.robot
+
 
 Library    SeleniumLibrary
 
 *** Variables ***
-${studentUsername}    sfv@dkfvv.df
-${studentPassword}    12345
+${studentUsername}    test20@test.com
+${studentPassword}    123456
 
 *** Keyword ***
 #This is the automated function for making the robot click at a location
@@ -35,14 +32,10 @@ Move to Login Page
 
 Attempt to Login With Credentials
 #passes the password variables into the xpath locations for username box and password box respectively. Then it clicks the login
-<<<<<<< HEAD:Robot/LoginStudent.robot
+
     Sleep    2s
     Input Text    //*[@id="emailTxt"]    ${studentUsername}
     Input Text    //*[@id="passwordTxt"]    ${studentPassword}
-=======
 
-    Input Text    //*[@id="emailTxt"]    ${adminUsername}
-    Input Text    //*[@id="passwordTxt"]    ${adminPassword}
->>>>>>> origin/JordansBranch:Robot/internAppLogin.robot
     Mouse Down    //*[@id="loginBtn"]
     Mouse Up    //*[@id="loginBtn"]
