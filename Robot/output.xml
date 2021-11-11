@@ -1,72 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.2 (Python 3.10.0 on win32)" generated="20211110 23:42:58.494" rpa="false" schemaversion="2">
+<robot generator="Robot 4.1.2 (Python 3.10.0 on win32)" generated="20211110 23:45:00.897" rpa="false" schemaversion="2">
 <suite id="s1" name="loginAsStudent" source="C:\Users\micha\internapp\robot\loginAsStudent.robot">
 <test id="s1-t1" name="Open Home Page">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>http://localhost:8000/</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20211110 23:42:58.786" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8000/'.</msg>
-<status status="PASS" starttime="20211110 23:42:58.786" endtime="20211110 23:43:01.259"/>
+<msg timestamp="20211110 23:45:01.229" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8000/'.</msg>
+<status status="PASS" starttime="20211110 23:45:01.229" endtime="20211110 23:45:03.732"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20211110 23:43:01.260" endtime="20211110 23:43:02.898"/>
+<status status="PASS" starttime="20211110 23:45:03.733" endtime="20211110 23:45:05.325"/>
 </kw>
-<status status="PASS" starttime="20211110 23:42:58.784" endtime="20211110 23:43:02.899"/>
+<status status="PASS" starttime="20211110 23:45:01.228" endtime="20211110 23:45:05.328"/>
 </test>
 <test id="s1-t2" name="Move to Login Page">
 <kw name="Mouse Down" library="SeleniumLibrary">
 <arg>xpath:/html/body/div/div/a[1]</arg>
 <doc>Simulates pressing the left mouse button on the element ``locator``.</doc>
-<msg timestamp="20211110 23:43:02.903" level="INFO">Simulating Mouse Down on element 'xpath:/html/body/div/div/a[1]'.</msg>
-<status status="PASS" starttime="20211110 23:43:02.902" endtime="20211110 23:43:03.205"/>
+<msg timestamp="20211110 23:45:05.334" level="INFO">Simulating Mouse Down on element 'xpath:/html/body/div/div/a[1]'.</msg>
+<status status="PASS" starttime="20211110 23:45:05.333" endtime="20211110 23:45:05.638"/>
 </kw>
 <kw name="Mouse Up" library="SeleniumLibrary">
 <arg>xpath:/html/body/div/div/a[1]</arg>
 <doc>Simulates releasing the left mouse button on the element ``locator``.</doc>
-<msg timestamp="20211110 23:43:03.206" level="INFO">Simulating Mouse Up on element 'xpath:/html/body/div/div/a[1]'.</msg>
-<status status="PASS" starttime="20211110 23:43:03.206" endtime="20211110 23:43:03.592"/>
+<msg timestamp="20211110 23:45:05.640" level="INFO">Simulating Mouse Up on element 'xpath:/html/body/div/div/a[1]'.</msg>
+<status status="PASS" starttime="20211110 23:45:05.639" endtime="20211110 23:45:06.260"/>
 </kw>
-<status status="PASS" starttime="20211110 23:43:02.901" endtime="20211110 23:43:03.593"/>
+<status status="PASS" starttime="20211110 23:45:05.330" endtime="20211110 23:45:06.261"/>
 </test>
 <test id="s1-t3" name="Attempt to Login With Credentials">
 <kw name="Sleep" library="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20211110 23:43:05.609" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20211110 23:43:03.596" endtime="20211110 23:43:05.609"/>
+<msg timestamp="20211110 23:45:08.274" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20211110 23:45:06.264" endtime="20211110 23:45:08.274"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>//*[@id="emailTxt"]</arg>
 <arg>${studentUsername}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20211110 23:43:05.611" level="INFO">Typing text 'test20@test.com' into text field '//*[@id="emailTxt"]'.</msg>
-<status status="PASS" starttime="20211110 23:43:05.610" endtime="20211110 23:43:05.755"/>
+<msg timestamp="20211110 23:45:08.276" level="INFO">Typing text 'test20@test.com' into text field '//*[@id="emailTxt"]'.</msg>
+<status status="PASS" starttime="20211110 23:45:08.275" endtime="20211110 23:45:08.418"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>//*[@id="passwordTxt"]</arg>
 <arg>${studentPassword}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20211110 23:43:05.756" level="INFO">Typing text '123456' into text field '//*[@id="passwordTxt"]'.</msg>
-<status status="PASS" starttime="20211110 23:43:05.755" endtime="20211110 23:43:05.891"/>
+<msg timestamp="20211110 23:45:08.419" level="INFO">Typing text '123456' into text field '//*[@id="passwordTxt"]'.</msg>
+<status status="PASS" starttime="20211110 23:45:08.419" endtime="20211110 23:45:08.532"/>
 </kw>
 <kw name="Mouse Down" library="SeleniumLibrary">
 <arg>//*[@id="loginBtn"]</arg>
 <doc>Simulates pressing the left mouse button on the element ``locator``.</doc>
-<msg timestamp="20211110 23:43:05.893" level="INFO">Simulating Mouse Down on element '//*[@id="loginBtn"]'.</msg>
-<status status="PASS" starttime="20211110 23:43:05.892" endtime="20211110 23:43:06.254"/>
+<msg timestamp="20211110 23:45:08.532" level="INFO">Simulating Mouse Down on element '//*[@id="loginBtn"]'.</msg>
+<status status="PASS" starttime="20211110 23:45:08.532" endtime="20211110 23:45:08.838"/>
 </kw>
 <kw name="Mouse Up" library="SeleniumLibrary">
 <arg>//*[@id="loginBtn"]</arg>
 <doc>Simulates releasing the left mouse button on the element ``locator``.</doc>
-<msg timestamp="20211110 23:43:06.256" level="INFO">Simulating Mouse Up on element '//*[@id="loginBtn"]'.</msg>
-<status status="PASS" starttime="20211110 23:43:06.255" endtime="20211110 23:43:08.159"/>
+<msg timestamp="20211110 23:45:08.839" level="INFO">Simulating Mouse Up on element '//*[@id="loginBtn"]'.</msg>
+<status status="PASS" starttime="20211110 23:45:08.838" endtime="20211110 23:45:10.677"/>
 </kw>
-<status status="PASS" starttime="20211110 23:43:03.595" endtime="20211110 23:43:08.160"/>
+<status status="PASS" starttime="20211110 23:45:06.263" endtime="20211110 23:45:10.678"/>
 </test>
 <doc>Bzzt ~ Boop Test that is verifying the opening of Google.com Checks if the installation is correct.</doc>
-<status status="PASS" starttime="20211110 23:42:58.496" endtime="20211110 23:43:08.162"/>
+<status status="PASS" starttime="20211110 23:45:00.900" endtime="20211110 23:45:10.681"/>
 </suite>
 <statistics>
 <total>
