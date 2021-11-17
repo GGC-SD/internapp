@@ -14,7 +14,7 @@ ${email}    mock@ggc.edu
 ${mockEmail}    ${serialNum}${email}
 ${mockPassword}    fakePass123
 ${mockStudentNum}    900100000
-${mockPhone}    7700000000
+${mockPhone}    7700000090
 ${mockAddress}    1000 University Parkway
 ${mockCity}    Lawrenceville
 ${mockState}    Georgia
