@@ -65,7 +65,7 @@ _InternApp is a web application designed to centralize the application process f
 1. _Michael Murillo - [@murillomichael](https://github.com/murillomichael):_ **_Team Manager_** &
    **_UI/UX design_** & **_Programmer_** & **_Client Liaison_** 💰 💰  <br>
 2. _Matthew Rosario - [@mrosario123](https://github.com/mrosario123):_ **_Data Modeler_** &
-   **_Documentation Lead_** & **_Programmer_** 🏦 <br>
+   **_Documentation Lead_** & **_Programmer_** 🏦 👍<br>
 3. _Jordan Harrison - [@SodaPopSuperStar](https://github.com/jharrison5@ggc.edu):_ **_Code architecture/lead programmer_** &
    **_Testing lead_** & **_Programmer_** 💰 💰  <br>
 
