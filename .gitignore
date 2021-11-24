@@ -62,3 +62,12 @@ jspm_packages
 
 # Local environment variables
 .env
+
+# Dev side log file in Robot
+.log.html
+
+#output
+output.xml
+
+#report
+report.html
