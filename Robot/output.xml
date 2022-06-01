@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.10.0 on win32)" generated="20211111 14:51:02.224" rpa="false" schemaversion="2">
+<suite id="s1" name="signUpChem" source="C:\Users\micha\internapp\robot\signUpChem.robot">
+<kw name="Setup" type="SETUP">
+<kw name="Create List" library="BuiltIn">
+<var>${alphabet}</var>
+<arg>a</arg>
+<arg>b</arg>
+<arg>c</arg>
+<arg>d</arg>
+<arg>e</arg>
+<arg>f</arg>
+<arg>g</arg>
+<arg>h</arg>
+<arg>i</arg>
+<arg>j</arg>
+<arg>k</arg>
+<arg>l</arg>
+<arg>m</arg>
+<arg>n</arg>
+<arg>o</arg>
+<arg>p</arg>
+<arg>q</arg>
+<arg>r</arg>
+<arg>s</arg>
+<arg>t</arg>
+<arg>u</arg>
+<arg>v</arg>
+<arg>w</arg>
+<arg>x</arg>
+<arg>y</arg>
+<arg>z</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20211111 14:51:02.532" level="INFO">${alphabet} = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']</msg>
+<status status="PASS" starttime="20211111 14:51:02.532" endtime="20211111 14:51:02.532"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${randomizerAlphabet}</var>
+<arg>random.randint(0,26)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20211111 14:51:02.533" level="INFO">${randomizerAlphabet} = 13</msg>
+<status status="PASS" starttime="20211111 14:51:02.533" endtime="20211111 14:51:02.533"/>
+</kw>
+<kw name="Get From List" library="Collections">
+<var>${randLetter}</var>
+<arg>${alphabet}</arg>
+<arg>${randomizerAlphabet}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20211111 14:51:02.533" level="INFO">${randLetter} = n</msg>
+<status status="PASS" starttime="20211111 14:51:02.533" endtime="20211111 14:51:02.533"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${serialNum}</var>
+<arg>random.randint(0,10000)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20211111 14:51:02.534" level="INFO">${serialNum} = 6583</msg>
+<status status="PASS" starttime="20211111 14:51:02.534" endtime="20211111 14:51:02.534"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${mockEmail}</arg>
+<arg>${randLetter}${serialNum}${email}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20211111 14:51:02.534" level="INFO">${mockEmail} = n6583mock@ggc.edu</msg>
+<status status="PASS" starttime="20211111 14:51:02.534" endtime="20211111 14:51:02.534"/>
+</kw>
+<status status="PASS" starttime="20211111 14:51:02.532" endtime="20211111 14:51:02.535"/>
+</kw>
+<test id="s1-t1" name="Open Home Page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://localhost:8000/</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211111 14:51:02.536" level="INFO">Opening browser 'chrome' to base url 'http://localhost:8000/'.</msg>
+<status status="PASS" starttime="20211111 14:51:02.536" endtime="20211111 14:51:04.574"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211111 14:51:04.575" endtime="20211111 14:51:06.065"/>
+</kw>
+<status status="PASS" starttime="20211111 14:51:02.535" endtime="20211111 14:51:06.065"/>
+</test>
+<test id="s1-t2" name="Select Signup">
+<kw name="Mouse Down" library="SeleniumLibrary">
+<arg>xpath:/html/body/div/div/a[2]</arg>
+<doc>Simulates pressing the left mouse button on the element ``locator``.</doc>
+<msg timestamp="20211111 14:51:06.076" level="INFO">Simulating Mouse Down on element 'xpath:/html/body/div/div/a[2]'.</msg>
+<status status="PASS" starttime="20211111 14:51:06.075" endtime="20211111 14:51:06.402"/>
+</kw>
+<kw name="Mouse Up" library="SeleniumLibrary">
+<arg>xpath:/html/body/div/div/a[2]</arg>
+<doc>Simulates releasing the left mouse button on the element ``locator``.</doc>
+<msg timestamp="20211111 14:51:06.403" level="INFO">Simulating Mouse Up on element 'xpath:/html/body/div/div/a[2]'.</msg>
+<status status="PASS" starttime="20211111 14:51:06.403" endtime="20211111 14:51:06.860"/>
+</kw>
+<kw name="Input New User Credentials at Signup">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="emailTxt"]</arg>
+<arg>${mockEmail}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211111 14:51:06.863" level="INFO">Typing text 'n6583mock@ggc.edu' into text field '//*[@id="emailTxt"]'.</msg>
+<status status="PASS" starttime="20211111 14:51:06.862" endtime="20211111 14:51:08.204"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="cfmEmailTxt"]</arg>
+<arg>${mockEmail}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211111 14:51:08.205" level="INFO">Typing text 'n6583mock@ggc.edu' into text field '//*[@id="cfmEmailTxt"]'.</msg>
+<status status="PASS" starttime="20211111 14:51:08.204" endtime="20211111 14:51:08.357"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="passwordTxt"]</arg>
+<arg>${mockPassword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211111 14:51:08.358" level="INFO">Typing text 'fakePass123' into text field '//*[@id="passwordTxt"]'.</msg>
+<status status="PASS" starttime="20211111 14:51:08.357" endtime="20211111 14:51:08.498"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="cfmPasswordTxt"]</arg>
+<arg>${mockPassword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211111 14:51:08.500" level="INFO">Typing text 'fakePass123' into text field '//*[@id="cfmPasswordTxt"]'.</msg>
+<status status="PASS" starttime="20211111 14:51:08.498" endtime="20211111 14:51:08.678"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="studentIdTxt"]</arg>
+<arg>${mockStudentNum}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211111 14:51:08.679" level="INFO">Typing text '900100000' into text field '//*[@id="studentIdTxt"]'.</msg>
+<status status="PASS" starttime="20211111 14:51:08.678" endtime="20211111 14:51:08.821"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="fnameTxt"]</arg>
+<arg>${mockFirstName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211111 14:51:08.822" level="INFO">Typing text 'Mock Human' into text field '//*[@id="fnameTxt"]'.</msg>
+<status status="PASS" starttime="20211111 14:51:08.821" endtime="20211111 14:51:08.975"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="lnameTxt"]</arg>
+<arg>${mockLastName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211111 14:51:08.976" level="INFO">Typing text 'Last Name' into text field '//*[@id="lnameTxt"]'.</msg>
+<status status="PASS" starttime="20211111 14:51:08.975" endtime="20211111 14:51:09.133"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="phone"]</arg>
+<arg>${mockPhone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211111 14:51:09.135" level="INFO">Typing text '7700000090' into text field '//*[@id="phone"]'.</msg>
+<status status="PASS" starttime="20211111 14:51:09.134" endtime="20211111 14:51:09.270"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="addressTxt"]</arg>
+<arg>${mockAddress}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211111 14:51:09.271" level="INFO">Typing text '1000 University Parkway' into text field '//*[@id="addressTxt"]'.</msg>
+<status status="PASS" starttime="20211111 14:51:09.271" endtime="20211111 14:51:09.423"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="cityTxt"]</arg>
+<arg>${mockCity}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211111 14:51:09.424" level="INFO">Typing text 'Lawrenceville' into text field '//*[@id="cityTxt"]'.</msg>
+<status status="PASS" starttime="20211111 14:51:09.423" endtime="20211111 14:51:09.543"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="stateTxt"]</arg>
+<arg>${mockState}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211111 14:51:09.545" level="INFO">Typing text 'Georgia' into text field '//*[@id="stateTxt"]'.</msg>
+<status status="PASS" starttime="20211111 14:51:09.544" endtime="20211111 14:51:09.667"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="zipTxt"]</arg>
+<arg>${mockZip}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211111 14:51:09.668" level="INFO">Typing text '30043' into text field '//*[@id="zipTxt"]'.</msg>
+<status status="PASS" starttime="20211111 14:51:09.667" endtime="20211111 14:51:09.777"/>
+</kw>
+<status status="PASS" starttime="20211111 14:51:06.861" endtime="20211111 14:51:09.778"/>
+</kw>
+<kw name="Mouse Down" library="SeleniumLibrary">
+<arg>xpath:/html/body/div/div/form/button</arg>
+<doc>Simulates pressing the left mouse button on the element ``locator``.</doc>
+<msg timestamp="20211111 14:51:09.779" level="INFO">Simulating Mouse Down on element 'xpath:/html/body/div/div/form/button'.</msg>
+<status status="PASS" starttime="20211111 14:51:09.779" endtime="20211111 14:51:10.084"/>
+</kw>
+<kw name="Mouse Up" library="SeleniumLibrary">
+<arg>xpath:/html/body/div/div/form/button</arg>
+<doc>Simulates releasing the left mouse button on the element ``locator``.</doc>
+<msg timestamp="20211111 14:51:10.086" level="INFO">Simulating Mouse Up on element 'xpath:/html/body/div/div/form/button'.</msg>
+<status status="PASS" starttime="20211111 14:51:10.085" endtime="20211111 14:51:10.730"/>
+</kw>
+<status status="PASS" starttime="20211111 14:51:06.072" endtime="20211111 14:51:10.731"/>
+</test>
+<test id="s1-t3" name="Select Signup as ITEC">
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>application</arg>
+<arg>Biology Internship (BIOL 4800)</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211111 14:51:10.735" level="INFO">Selecting options from selection list 'application' by label Biology Internship (BIOL 4800).</msg>
+<status status="PASS" starttime="20211111 14:51:10.734" endtime="20211111 14:51:12.005"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>//*[@id="bioBox"]</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20211111 14:51:12.006" level="INFO">Selecting checkbox '//*[@id="bioBox"]'.</msg>
+<status status="PASS" starttime="20211111 14:51:12.006" endtime="20211111 14:51:12.217"/>
+</kw>
+<kw name="Mouse Down" library="SeleniumLibrary">
+<arg>xpath:/html/body/div/div/div/div[2]/input</arg>
+<doc>Simulates pressing the left mouse button on the element ``locator``.</doc>
+<msg timestamp="20211111 14:51:12.222" level="INFO">Simulating Mouse Down on element 'xpath:/html/body/div/div/div/div[2]/input'.</msg>
+<status status="PASS" starttime="20211111 14:51:12.219" endtime="20211111 14:51:12.575"/>
+</kw>
+<kw name="Mouse Up" library="SeleniumLibrary">
+<arg>xpath:/html/body/div/div/div/div[2]/input</arg>
+<doc>Simulates releasing the left mouse button on the element ``locator``.</doc>
+<msg timestamp="20211111 14:51:12.577" level="INFO">Simulating Mouse Up on element 'xpath:/html/body/div/div/div/div[2]/input'.</msg>
+<status status="PASS" starttime="20211111 14:51:12.576" endtime="20211111 14:51:14.260"/>
+</kw>
+<status status="PASS" starttime="20211111 14:51:10.733" endtime="20211111 14:51:14.261"/>
+</test>
+<test id="s1-t4" name="Complete The Signup at Bio Page">
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>proposedinternsemester</arg>
+<arg>Fall</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211111 14:51:14.268" level="INFO">Selecting options from selection list 'proposedinternsemester' by label Fall.</msg>
+<status status="PASS" starttime="20211111 14:51:14.268" endtime="20211111 14:51:14.440"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>proposedinternyear</arg>
+<arg>2022</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211111 14:51:14.442" level="INFO">Selecting options from selection list 'proposedinternyear' by label 2022.</msg>
+<status status="PASS" starttime="20211111 14:51:14.441" endtime="20211111 14:51:14.575"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>major</arg>
+<arg>Biochemistry</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211111 14:51:14.578" level="INFO">Selecting options from selection list 'major' by label Biochemistry.</msg>
+<status status="PASS" starttime="20211111 14:51:14.576" endtime="20211111 14:51:14.779"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>expectedGraduationSemester</arg>
+<arg>Fall</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211111 14:51:14.781" level="INFO">Selecting options from selection list 'expectedGraduationSemester' by label Fall.</msg>
+<status status="PASS" starttime="20211111 14:51:14.780" endtime="20211111 14:51:14.901"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>expectedGraduationYear</arg>
+<arg>2022</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211111 14:51:14.902" level="INFO">Selecting options from selection list 'expectedGraduationYear' by label 2022.</msg>
+<status status="PASS" starttime="20211111 14:51:14.902" endtime="20211111 14:51:15.100"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="gpaTxt"]</arg>
+<arg>3.50</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211111 14:51:15.103" level="INFO">Typing text '3.50' into text field '//*[@id="gpaTxt"]'.</msg>
+<status status="PASS" starttime="20211111 14:51:15.102" endtime="20211111 14:51:15.348"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="programGPATxt"]</arg>
+<arg>3.50</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211111 14:51:15.349" level="INFO">Typing text '3.50' into text field '//*[@id="programGPATxt"]'.</msg>
+<status status="PASS" starttime="20211111 14:51:15.348" endtime="20211111 14:51:15.466"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="hoursTxt"]</arg>
+<arg>13</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211111 14:51:15.467" level="INFO">Typing text '13' into text field '//*[@id="hoursTxt"]'.</msg>
+<status status="PASS" starttime="20211111 14:51:15.467" endtime="20211111 14:51:15.575"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="professionTxt"]</arg>
+<arg>Testing</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211111 14:51:15.576" level="INFO">Typing text 'Testing' into text field '//*[@id="professionTxt"]'.</msg>
+<status status="PASS" starttime="20211111 14:51:15.576" endtime="20211111 14:51:15.695"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="ecNameTxt"]</arg>
+<arg>I Love You Momma</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211111 14:51:15.697" level="INFO">Typing text 'I Love You Momma' into text field '//*[@id="ecNameTxt"]'.</msg>
+<status status="PASS" starttime="20211111 14:51:15.696" endtime="20211111 14:51:15.827"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="ecAddressTxt"]</arg>
+<arg>Momma's Address</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211111 14:51:15.829" level="INFO">Typing text 'Momma's Address' into text field '//*[@id="ecAddressTxt"]'.</msg>
+<status status="PASS" starttime="20211111 14:51:15.828" endtime="20211111 14:51:15.959"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="ecCityTxt"]</arg>
+<arg>Momma's City</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211111 14:51:15.961" level="INFO">Typing text 'Momma's City' into text field '//*[@id="ecCityTxt"]'.</msg>
+<status status="PASS" starttime="20211111 14:51:15.960" endtime="20211111 14:51:16.083"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="ecStateTxt"]</arg>
+<arg>Momma's State</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211111 14:51:16.084" level="INFO">Typing text 'Momma's State' into text field '//*[@id="ecStateTxt"]'.</msg>
+<status status="PASS" starttime="20211111 14:51:16.084" endtime="20211111 14:51:16.205"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="ecZipCodeTxt"]</arg>
+<arg>30043</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211111 14:51:16.206" level="INFO">Typing text '30043' into text field '//*[@id="ecZipCodeTxt"]'.</msg>
+<status status="PASS" starttime="20211111 14:51:16.206" endtime="20211111 14:51:16.318"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="ecPhone"]</arg>
+<arg>770-000-0001</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211111 14:51:16.319" level="INFO">Typing text '770-000-0001' into text field '//*[@id="ecPhone"]'.</msg>
+<status status="PASS" starttime="20211111 14:51:16.319" endtime="20211111 14:51:16.441"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="ecEmailTxt"]</arg>
+<arg>iLoveMama@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211111 14:51:16.442" level="INFO">Typing text 'iLoveMama@gmail.com' into text field '//*[@id="ecEmailTxt"]'.</msg>
+<status status="PASS" starttime="20211111 14:51:16.442" endtime="20211111 14:51:16.573"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="mentorNameTxt"]</arg>
+<arg>Cengiz &amp; Rahaf</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211111 14:51:16.574" level="INFO">Typing text 'Cengiz &amp; Rahaf' into text field '//*[@id="mentorNameTxt"]'.</msg>
+<status status="PASS" starttime="20211111 14:51:16.574" endtime="20211111 14:51:16.705"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="mentorCellTxt"]</arg>
+<arg>770-000-0000</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211111 14:51:16.706" level="INFO">Typing text '770-000-0000' into text field '//*[@id="mentorCellTxt"]'.</msg>
+<status status="PASS" starttime="20211111 14:51:16.706" endtime="20211111 14:51:16.828"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="mentorOfficeTxt"]</arg>
+<arg>H-1210</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211111 14:51:16.829" level="INFO">Typing text 'H-1210' into text field '//*[@id="mentorOfficeTxt"]'.</msg>
+<status status="PASS" starttime="20211111 14:51:16.828" endtime="20211111 14:51:16.947"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="mentorEmailTxt"]</arg>
+<arg>cgunnay@ggc.edu</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211111 14:51:16.949" level="INFO">Typing text 'cgunnay@ggc.edu' into text field '//*[@id="mentorEmailTxt"]'.</msg>
+<status status="PASS" starttime="20211111 14:51:16.948" endtime="20211111 14:51:17.078"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>internsite</arg>
+<arg>Covenant Health Pharmacy</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211111 14:51:17.079" level="INFO">Selecting options from selection list 'internsite' by label Covenant Health Pharmacy.</msg>
+<status status="PASS" starttime="20211111 14:51:17.079" endtime="20211111 14:51:17.171"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>isstudentemployedatsite</arg>
+<arg>No</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211111 14:51:17.172" level="INFO">Selecting options from selection list 'isstudentemployedatsite' by label No.</msg>
+<status status="PASS" starttime="20211111 14:51:17.172" endtime="20211111 14:51:17.260"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="firstTxt"]</arg>
+<arg>Testing</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211111 14:51:17.261" level="INFO">Typing text 'Testing' into text field '//*[@id="firstTxt"]'.</msg>
+<status status="PASS" starttime="20211111 14:51:17.261" endtime="20211111 14:51:17.377"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="secondTxt"]</arg>
+<arg>Testing</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211111 14:51:17.378" level="INFO">Typing text 'Testing' into text field '//*[@id="secondTxt"]'.</msg>
+<status status="PASS" starttime="20211111 14:51:17.378" endtime="20211111 14:51:17.493"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="thirdTxt"]</arg>
+<arg>Testing</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211111 14:51:17.494" level="INFO">Typing text 'Testing' into text field '//*[@id="thirdTxt"]'.</msg>
+<status status="PASS" starttime="20211111 14:51:17.494" endtime="20211111 14:51:17.623"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="signatureTxt"]</arg>
+<arg>${mockEmail}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211111 14:51:17.624" level="INFO">Typing text 'n6583mock@ggc.edu' into text field '//*[@id="signatureTxt"]'.</msg>
+<status status="PASS" starttime="20211111 14:51:17.624" endtime="20211111 14:51:17.749"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="printedTxt"]</arg>
+<arg>${mockEmail}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211111 14:51:17.750" level="INFO">Typing text 'n6583mock@ggc.edu' into text field '//*[@id="printedTxt"]'.</msg>
+<status status="PASS" starttime="20211111 14:51:17.749" endtime="20211111 14:51:17.892"/>
+</kw>
+<kw name="Mouse Down" library="SeleniumLibrary">
+<arg>//*[@id="submitBtn"]</arg>
+<doc>Simulates pressing the left mouse button on the element ``locator``.</doc>
+<msg timestamp="20211111 14:51:17.893" level="INFO">Simulating Mouse Down on element '//*[@id="submitBtn"]'.</msg>
+<status status="PASS" starttime="20211111 14:51:17.892" endtime="20211111 14:51:18.201"/>
+</kw>
+<kw name="Mouse Up" library="SeleniumLibrary">
+<arg>//*[@id="submitBtn"]</arg>
+<doc>Simulates releasing the left mouse button on the element ``locator``.</doc>
+<msg timestamp="20211111 14:51:18.203" level="INFO">Simulating Mouse Up on element '//*[@id="submitBtn"]'.</msg>
+<status status="PASS" starttime="20211111 14:51:18.202" endtime="20211111 14:51:18.508"/>
+</kw>
+<status status="PASS" starttime="20211111 14:51:14.266" endtime="20211111 14:51:18.510"/>
+</test>
+<doc>Automated signup and creation of a mock Chemistry Intern and all its credentials</doc>
+<status status="PASS" starttime="20211111 14:51:02.227" endtime="20211111 14:51:18.515"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="signUpChem">signUpChem</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
